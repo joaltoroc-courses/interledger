@@ -21,9 +21,26 @@
   <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
   [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+## 🎯 Project Objective
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+The main goal of this project is to provide a robust and scalable solution for managing financial transactions between different entities. This includes features such as creating, processing, and tracking payments, as well as ensuring the security and integrity of all transactions. By leveraging a modern technology stack, the project aims to deliver a high-performance and reliable system that can be easily integrated with other financial services.
+
+## 💻 Technology Stack
+
+This project is built using a modern and powerful technology stack that ensures high performance, scalability, and maintainability. The key technologies used include:
+
+- **Programming Language**: `TypeScript`
+- **Framework**: `NestJS`
+- **API Documentation**: `Swagger`
+- **Linting**: `ESLint`
+- **Code Formatting**: `Prettier`
+- **Testing**: `Jest`
+
+## 📖 API Documentation with Swagger
+
+This project uses Swagger to provide comprehensive and interactive API documentation. Swagger allows you to visualize and interact with the API's resources without having any of the implementation logic in place.
+
+To access the Swagger documentation, simply run the application and navigate to `http://localhost:3000/api`. The Swagger UI will be automatically generated, providing a clear and detailed overview of all available endpoints, their parameters, and response objects.
 
 ## Project setup
 
