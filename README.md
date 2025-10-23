@@ -44,6 +44,7 @@ To access the Swagger documentation, simply run the application and navigate to 
 
 ## Links
 
+- https://platzi.com/cursos/interledger-openpayments/
 - https://interledger.net/
 - https://wallet.interledger-test.dev/
 
