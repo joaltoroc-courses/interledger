@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
@@ -40,7 +40,12 @@ This project is built using a modern and powerful technology stack that ensures 
 
 This project uses Swagger to provide comprehensive and interactive API documentation. Swagger allows you to visualize and interact with the API's resources without having any of the implementation logic in place.
 
-To access the Swagger documentation, simply run the application and navigate to `http://localhost:3000/api`. The Swagger UI will be automatically generated, providing a clear and detailed overview of all available endpoints, their parameters, and response objects.
+To access the Swagger documentation, simply run the application and navigate to `http://localhost:3000/api/docs`. The Swagger UI will be automatically generated, providing a clear and detailed overview of all available endpoints, their parameters, and response objects.
+
+## Links
+
+- https://interledger.net/
+- https://wallet.interledger-test.dev/
 
 ## Project setup
 

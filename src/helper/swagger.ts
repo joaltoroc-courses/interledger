@@ -4,8 +4,8 @@ import { RawServerDefault } from 'fastify';
 
 export const SwaggerSetup = (app: NestFastifyApplication<RawServerDefault>) => {
   const options = new DocumentBuilder()
-    .setTitle('API Flights')
-    .setDescription('Scheduled Flights App')
+    .setTitle('Interledger API')
+    .setDescription('Integrations with Interledger')
     .setVersion('1.0.0')
     .addBearerAuth()
     .build();
