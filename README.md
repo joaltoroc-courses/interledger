@@ -2,7 +2,7 @@
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
   <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
@@ -18,12 +18,16 @@
     <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
   <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
 ## 🎯 Project Objective
 
-The main goal of this project is to provide a robust and scalable solution for managing financial transactions between different entities. This includes features such as creating, processing, and tracking payments, as well as ensuring the security and integrity of all transactions. By leveraging a modern technology stack, the project aims to deliver a high-performance and reliable system that can be easily integrated with other financial services.
+The main goal of this project is to provide a robust and scalable solution for managing financial transactions between different entities. This is achieved by leveraging the **Interledger protocol** and the **Open Payments** standard, which allows for secure and efficient payments across different payment networks.
+
+This project provides a REST API that allows you to:
+
+- Get information about a wallet address.
+- Create a payment request.
+- Confirm a payment.
 
 ## 💻 Technology Stack
 
@@ -31,6 +35,7 @@ This project is built using a modern and powerful technology stack that ensures 
 
 - **Programming Language**: `TypeScript`
 - **Framework**: `NestJS`
+- **HTTP Server**: `Fastify`
 - **API Documentation**: `Swagger`
 - **Linting**: `ESLint`
 - **Code Formatting**: `Prettier`
@@ -42,11 +47,24 @@ This project uses Swagger to provide comprehensive and interactive API documenta
 
 To access the Swagger documentation, simply run the application and navigate to `http://localhost:3000/api/docs`. The Swagger UI will be automatically generated, providing a clear and detailed overview of all available endpoints, their parameters, and response objects.
 
-## Links
+## 🔗 Interledger Integration
 
-- https://platzi.com/cursos/interledger-openpayments/
-- https://interledger.net/
-- https://wallet.interledger-test.dev/
+This project integrates with the Interledger network using the `@interledger/open-payments` library. This library provides a set of tools for interacting with the Open Payments API, which is a standard for sending and receiving payments over the Interledger protocol.
+
+The application uses an authenticated client to communicate with the Open Payments API. This client is configured in the `payments.module.ts` file and uses the following environment variables:
+
+- `IL_BASE`: The base URL of the Interledger service provider.
+- `IL_WALLET`: The wallet address of the user.
+- `IL_KEY_ID`: The key ID for authenticating with the Open Payments API.
+- `IL_PRIVATE_KEY`: The private key for authenticating with the Open Payments API.
+
+## 🏗️ Application Architecture
+
+This project follows the standard NestJS architecture, with a clear separation of concerns between modules, controllers, and services.
+
+- **DTOs**: The application uses Data Transfer Objects (DTOs) for validating the data sent to the API. The DTOs are defined in the `src/payments/dto` directory and are used in the `payments.controller.ts` file.
+- **Error Handling**: The application uses a global filter for handling HTTP exceptions. The filter is defined in the `src/common/filter/http-exception.filter.ts` file and is applied to all incoming requests.
+- **Interceptors**: The application uses a global interceptor for handling timeouts. The interceptor is defined in the `src/common/interceptors/timeout.interceptor.ts` file and is applied to all incoming requests.
 
 ## Project setup
 
@@ -79,42 +97,6 @@ $ npm run test:e2e
 # test coverage
 $ npm run test:cov
 ```
-
-## Deployment
-
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
-
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
-
-```bash
-$ npm install -g @nestjs/mau
-$ mau deploy
-```
-
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
